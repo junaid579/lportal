@@ -14,13 +14,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+// Auth::routes();
 
-Route::get('/home', 'HomeController@index_metro');
-Route::get('/home', 'HomeController@index_metro_2');
+// Route::get('/home', 'HomeController@index_metro');
+// Route::get('/home', 'HomeController@index_metro_2');
 Route::get('/test', function () {
     return view('test');
 });
 Route::post('/test', 'testcontroller@findAction');
 // Route::post('/test', 'testcontroller@get_details');
 // Route::post('/test', 'testcontroller@fetch');
+Route::get('/login', function () {
+    return view('login');
+});
+Route::post('/login', 'logincontroller@login');
+Route::get('/home_test', function () {
+    return view('home_metro_2');
+});
